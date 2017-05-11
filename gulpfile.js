@@ -13,12 +13,6 @@ var plumber = require('gulp-plumber'); // gulp 错误处理
 
 var rename = require('gulp-rename'); // 文件重命名
 
-gulp.task('cleanJS', ()=>{
-    gulp.src('./src/js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('./dist/js/'))
-});
-
 gulp.task('scss', function () {
     var postCssPlugins = [
         stripInlineComments,
@@ -29,7 +23,7 @@ gulp.task('scss', function () {
     ];
 
     function buildCss() {
-        gulp.src('./src/scss/style.scss')
+        gulp.src('./src/common/scss/*.scss')
             .pipe(plumber())
             .pipe(postcss(postCssPlugins, {syntax: scss}))
             .pipe(rename(function (path) {
@@ -39,7 +33,7 @@ gulp.task('scss', function () {
             .pipe(gulp.dest('./dist/css'));
     }
     buildCss();
-    gulp.watch('./src/scss/*.scss', function () {
+    gulp.watch('./src/common/scss/*.scss', function () {
         buildCss();
     })
 });
@@ -58,4 +52,4 @@ gulp.task('browserSync', function () {
     browserSync.watch('./*.html').on('change', browserSync.reload)
 });
 
-gulp.task('default', ['browserSync', 'scss', 'cleanJS']);
+gulp.task('default', ['browserSync', 'scss']);
