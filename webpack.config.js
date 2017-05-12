@@ -10,8 +10,8 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, './dist'),
-    publicPath: env === 'production' ? '/360star-handLock/' : '/dist/',
+    path: path.join(__dirname, './front/dist'),
+    publicPath: env === 'production' ? '/360star-handLock/' : '/front/dist/',
     filename: 'bundle.js'
   },  
 
