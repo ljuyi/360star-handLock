@@ -2,3 +2,4 @@ node_module
 .idea
 .vscode
 .gulpfile.js
+npm-debug.log
