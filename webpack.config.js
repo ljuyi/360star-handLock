@@ -8,39 +8,40 @@ function resolve(dir) {
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/app.js',
+  entry: resolve('front/src/app.js'),
   output: {
-    path: path.join(__dirname, './front/dist'),
-    publicPath: env === 'production' ? '/360star-handLock/' : '/front/dist/',
+    publicPath: 'front/dist',
+    path: resolve('./front/dist/js'),
     filename: 'bundle.js'
   },  
-
-  devServer: {
-    contentBase: __dirname,
-    port: 4000
-  },
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          'css-loader?sourceMap',
-          'postcss-loader',
-          'sass-loader?sourceMap'
-        ]
+        test: /\.js$/,
+        enforce: 'pre',
+        include: resolve('front/src/common/js'),
+        use: [{
+          loader: 'eslint-loader',
+          options: {
+             formatter: require('eslint-friendly-formatter')
+          }
+        }]
+      },
+      {
+        test: /\.js$/,
+        include: resolve('front/src/common/js'),
+        loader: 'babel-loader'
       }
     ]
-  }
-};
-
-if (env === 'production') {
-  module.exports.plugins = (module.exports.plugins || []).concat([
+  },
+  externals:[{
+    XMLHttpRequest: '{XMLHttpRequest:XMLHttpRequest}'
+  }],
+  plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
       compress: {
         warnings: false
       }
     })
-  ]);
-}
+  ]
+};

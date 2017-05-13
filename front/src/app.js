@@ -1,4 +1,2 @@
-import './common/scss/handLock.scss';
-import './common/scss/selectRoom.scss';
+import {init} from './common/js/init.js'
 
-init();

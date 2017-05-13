@@ -7,13 +7,15 @@ const path = require('path')
 var app = new koa()
 var router = new Router()
 
-router.all('/index',function (ctx, next) {
-    var fsPath = path.join(__dirname, '../../../component/index.html')
-    ctx.body = fs.readFileSync(fsPath, 'utf-8')
-})
+router
     .get('/selectRoom', function(ctx, next) {
-        var fsPath = path.join(__dirname, '../../../component/room.html')
-        ctx.body = fs.readFileSync(fsPath, 'utf-8')
+        var fsPath = path.join(__dirname, '../../front/src/component/room.html')
+        var file = fs.readFileSync(fsPath, 'utf-8'),
+            stylePath = path.join(__dirname, '../../front/dist/css/selectRoom.css')
+        ctx.body = {
+            file: file,
+            style: stylePath
+        }
     })
 
 app.use(cors()).use(router.routes())
