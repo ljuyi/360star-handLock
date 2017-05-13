@@ -8,10 +8,10 @@ function resolve(dir) {
 
 module.exports = {
   devtool: 'source-map',
-  entry: resolve('front/src/app.js'),
+  entry: resolve('src/app.js'),
   output: {
-    publicPath: 'front/dist',
-    path: resolve('./front/dist/js'),
+    publicPath: 'dist',
+    path: resolve('./dist/js'),
     filename: 'bundle.js'
   },  
   module: {
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.js$/,
         enforce: 'pre',
-        include: resolve('front/src/common/js'),
+        include: resolve('src/common/js'),
         use: [{
           loader: 'eslint-loader',
           options: {
@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: resolve('front/src/common/js'),
+        include: resolve('src/common/js'),
         loader: 'babel-loader'
       }
     ]

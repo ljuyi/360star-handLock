@@ -143,6 +143,7 @@ function touch (event) {                                           // 触摸事�
             if (route.isCheck) {
                 if (route.input.toString() === Storage.getItem('psd').toString()) {
                     info.innerHTML = '<p>密码正确!</p>'
+
                 } else {
                     info.innerHTML = '<p>输入的密码不正确</p>'
                     initPoint()

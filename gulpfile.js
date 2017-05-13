@@ -11,9 +11,9 @@ var browserSync = require('browser-sync'); // 自动刷新
 var plumber = require('gulp-plumber'); // gulp 错误处理
 
 var rename = require('gulp-rename'); // 文件重命名
-var webpack = require('webpack')
-var webpackConfig = require('./webpack.config.js');
 
+var webpack = require('webpack')
+var webpackConfig = require('./webpack.config.js')
 gulp.task('webpack', function () {
     var myConfig = Object.create(webpackConfig)
     webpack(myConfig, function () {})
@@ -28,17 +28,17 @@ gulp.task('scss', function () {
     ];
 
     function buildCss() {
-        gulp.src('./front/src/common/scss/*.scss')
+        gulp.src('./src/common/scss/*.scss')
             .pipe(plumber())
             .pipe(postcss(postCssPlugins, {syntax: scss}))
             .pipe(rename(function (path) {
                 path.extname = '.css';
             }))
             .pipe(cleanCSS())
-            .pipe(gulp.dest('./front/dist/css'));
+            .pipe(gulp.dest('./dist/css'));
     }
     buildCss();
-    gulp.watch('./front/src/common/scss/**', function () {
+    gulp.watch('./src/common/scss/**', function () {
         buildCss();
     })
 });
@@ -53,10 +53,10 @@ gulp.task('browserSync', function () {
         }
     });
 
-    browserSync.watch('./front/dist/css/*.css').on('change', browserSync.reload);
+    browserSync.watch('./dist/css/*.css').on('change', browserSync.reload);
     browserSync.watch('./*.html').on('change', browserSync.reload)
-    browserSync.watch('./front/dist/js/*.js').on('change', browserSync.reload);
+    browserSync.watch('./dist/js/*.js').on('change', browserSync.reload);
 });
 
-gulp.watch('./front/src/common/js/*.js', ['webpack'])
+gulp.watch('./src/common/*.js', ['webpack'])
 gulp.task('default', ['browserSync', 'scss', 'webpack']);
