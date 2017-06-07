@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      js中的基本类型和引用类型 | goldfish 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ljuyi">
+    
+    
+
+    <meta name="description" content="js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#x6709;&amp;#x4EE5;&amp;#x4E0B;&amp;#x51E0;&amp;#x79CD;&amp;#xFF1A;
+number boolean undefined object function string null
+js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中的基本类型和引用类型 | goldfish">
+<meta property="og:url" content="http://www.gdljuyi.com/2016/11/30/jsObject/index.html">
+<meta property="og:site_name" content="goldfish">
+<meta property="og:description" content="js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#x6709;&amp;#x4EE5;&amp;#x4E0B;&amp;#x51E0;&amp;#x79CD;&amp;#xFF1A;
+number boolean undefined object function string null
+js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578">
+<meta property="og:updated_time" content="2017-02-07T10:45:33.551Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js中的基本类型和引用类型 | goldfish">
+<meta name="twitter:description" content="js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#x6709;&amp;#x4EE5;&amp;#x4E0B;&amp;#x51E0;&amp;#x79CD;&amp;#xFF1A;
+number boolean undefined object function string null
+js&amp;#x4E2D;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">goldfish</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">js中的基本类型和引用类型</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-30" class="post-meta__date date">2016-11-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/js/">js</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>js&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<p>number boolean undefined object function string null</p>
+<p>js&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#xFF1A;&#x57FA;&#x672C;&#x7C7B;&#x578B; &#x548C; &#x5F15;&#x7528;&#x7C7B;&#x578B;</p>
+<h4 id="&#x57FA;&#x672C;&#x7C7B;&#x578B;"><a href="#&#x57FA;&#x672C;&#x7C7B;&#x578B;" class="headerlink" title="&#x57FA;&#x672C;&#x7C7B;&#x578B;"></a>&#x57FA;&#x672C;&#x7C7B;&#x578B;</h4><p>number boolean string undefined null</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;,&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x590D;&#x5236;&#x4F1A;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x91CD;&#x65B0;&#x5F00;&#x8F9F;&#x4E00;&#x4E2A;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6539;&#x53D8;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x503C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> p1 = p;</div><div class="line">p1 = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(p);    <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(p1);   <span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<h4 id="&#x5F15;&#x7528;&#x7C7B;&#x578B;"><a href="#&#x5F15;&#x7528;&#x7C7B;&#x578B;" class="headerlink" title="&#x5F15;&#x7528;&#x7C7B;&#x578B;"></a>&#x5F15;&#x7528;&#x7C7B;&#x578B;</h4><p>object function</p>
+<p>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5B58;&#x50A8;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x4F1A;&#x5F00;&#x8F9F;&#x4E00;&#x4E2A;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x8FD9;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5728;&#x5806;&#x5185;&#x5B58;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x8BE5;&#x5F15;&#x7528;&#x7C7B;&#x578B;<br>&#x5982;&#x679C;&#x53D1;&#x751F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x5219;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x53C8;&#x5F00;&#x8F9F;&#x4E00;&#x5757;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x76F8;&#x540C;&#x7684;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4FEE;&#x6539;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x53E6;&#x4E00;&#x4E2A;&#x7684;&#x503C;&#x4E5F;&#x4F1A;&#x6539;&#x53D8;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> object1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> object2 = object1;</div><div class="line">object.name = <span class="string">&apos;jhon&apos;</span>;</div><div class="line"><span class="built_in">console</span>.log(object.name);   <span class="comment">//jhon</span></div><div class="line"><span class="built_in">console</span>.log(object.name);   <span class="comment">//jhon</span></div></pre></td></tr></table></figure></p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x533A;&#x522B;&#xFF1A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x662F;&#x6CA1;&#x6709;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x6709;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">&apos;aaa&apos;</span>;</div><div class="line">string.index = <span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.log(string.index);  <span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x4F1A;&#x7ACB;&#x5373;&#x9500;&#x6BC1;&#xFF0C;&#x6240;&#x4EE5;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x53E5;&#x7684;&#x65F6;&#x5019;&#xFF0C;string&#x7684;index&#x5C5E;&#x6027;&#x5176;&#x5B9E;&#x5DF2;&#x7ECF;&#x4E0D;&#x5B58;&#x5728;&#x4E86;<br>&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;String &#x7C7B;&#x578B;&#x8FD8;&#x6709;&#x90A3;&#x4E48;&#x591A;&#x65B9;&#x6CD5;&#x5462;&#xFF1F;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string1 = <span class="string">&apos;aaa&apos;</span>;</div><div class="line"><span class="keyword">var</span> string2 = string1.substring(<span class="number">0</span>);</div><div class="line"><span class="built_in">console</span>.log(string2);   <span class="comment">//aaa</span></div></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x6267;&#x884C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5728;&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x4E86;&#x5982;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;aaa&quot;</span>);</div><div class="line"><span class="keyword">var</span> string2 = string.substring(<span class="number">0</span>);</div><div class="line">string1 = <span class="literal">null</span>;</div></pre></td></tr></table></figure></p>
+<p>(1)&#x521B;&#x5EFA;&#x4E00;&#x4E2A;String&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;(&#x4F7F;&#x7528; new &#x64CD;&#x4F5C;&#x7B26;&#x521B;&#x5EFA;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x6D41;&#x79BB;&#x5F00;&#x5F53;&#x524D;&#x4F5C;&#x7528;&#x57DF;&#x4E4B;&#x524D;&#x90FD;&#x4E00;&#x76F4;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x800C;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x57FA;&#x672C;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x53EA;&#x5B58;&#x5728;&#x4E8E;&#x4E00;<br>&#x884C;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;&#x77AC;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x7ACB;&#x5373;&#x88AB;&#x9500;&#x6BC1; )</p>
+<p>(2)&#x5728;&#x5B9E;&#x4F8B;&#x4E0A;&#x8C03;&#x7528;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;</p>
+<p>(3)&#x9500;&#x6BC1;&#x8BE5;&#x5B9E;&#x4F8B;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x867D;&#x7136;&#x5B9A;&#x4E49;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7C7B;&#x578B;String&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8C03;&#x7528;String&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; <strong>&#x57FA;&#x672C;&#x5305;&#x88C5;&#x7C7B;&#x578B;</strong> &#x7684;String<br>&#x9664;&#x8FC7;String&#x5C5E;&#x4E8E; <strong>&#x57FA;&#x672C;&#x5305;&#x88C5;&#x7C7B;&#x578B;</strong> &#xFF0C;&#x8FD8;&#x6709;boolean number&#x4E5F;&#x5C5E;&#x4E8E; <strong>&#x57FA;&#x672C;&#x5305;&#x88C5;&#x7C7B;&#x578B;</strong></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

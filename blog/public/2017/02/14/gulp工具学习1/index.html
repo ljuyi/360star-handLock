@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      gulp工具学习1 | goldfish 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="ljuyi">
+    
+    
+
+    <meta name="description" content="&amp;#x4F7F;&amp;#x7528;gulp&amp;#x5BF9;&amp;#x9879;&amp;#x76EE;&amp;#x8FDB;&amp;#x884C;&amp;#x6784;&amp;#x5EFA;&amp;#x65F6;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528; gulp.src &amp;#x63A5;&amp;#x53E3;&amp;#x5C06;&amp;#x5339;&amp;#x914D;&amp;#x5230;&amp;#x7684;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp工具学习1 | goldfish">
+<meta property="og:url" content="http://www.gdljuyi.com/2017/02/14/gulp工具学习1/index.html">
+<meta property="og:site_name" content="goldfish">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;gulp&amp;#x5BF9;&amp;#x9879;&amp;#x76EE;&amp;#x8FDB;&amp;#x884C;&amp;#x6784;&amp;#x5EFA;&amp;#x65F6;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528; gulp.src &amp;#x63A5;&amp;#x53E3;&amp;#x5C06;&amp;#x5339;&amp;#x914D;&amp;#x5230;&amp;#x7684;&amp;#">
+<meta property="og:image" content="http://www.gdljuyi.com/2017/02/14/gulp工具学习1/2017-02-14/pic1.png">
+<meta property="og:image" content="http://www.gdljuyi.com/2017/02/14/gulp工具学习1/2017-02-14/pic2.png">
+<meta property="og:updated_time" content="2017-03-05T01:59:00.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp工具学习1 | goldfish">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;gulp&amp;#x5BF9;&amp;#x9879;&amp;#x76EE;&amp;#x8FDB;&amp;#x884C;&amp;#x6784;&amp;#x5EFA;&amp;#x65F6;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x4F1A;&amp;#x4F7F;&amp;#x7528; gulp.src &amp;#x63A5;&amp;#x53E3;&amp;#x5C06;&amp;#x5339;&amp;#x914D;&amp;#x5230;&amp;#x7684;&amp;#">
+<meta name="twitter:image" content="http://www.gdljuyi.com/2017/02/14/gulp工具学习1/2017-02-14/pic1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">goldfish</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">gulp工具学习1</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-14" class="post-meta__date date">2017-02-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/工具/">工具</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>&#x4F7F;&#x7528;gulp&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x4F7F;&#x7528; gulp.src &#x63A5;&#x53E3;&#x5C06;&#x5339;&#x914D;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x8F6C;&#x4E3A; stream&#xFF08;&#x6D41;&#xFF09;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x518D;&#x901A;&#x8FC7; .pipe() &#x63A5;&#x53E3;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x94FE;&#x5F0F;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#x3002;<br>&#x5BF9;&#x6BD4;&#x6D41;&#x5F0F;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x548C;&#x5757;&#x5F0F;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x533A;&#x522B;&#xFF1A;<br>&#x6D41;&#x5F0F;&#xFF1A;&#x6E90;&#x6E90;&#x4E0D;&#x65AD;&#x5730;&#x8F93;&#x9001;&#x5230;&#x8F93;&#x51FA;&#x63A5;&#x53E3;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x8FB9;&#x8BFB;&#x53D6;&#x4E00;&#x8FB9;&#x8F93;&#x51FA;<br>&#x5757;&#x5F0F;&#xFF1A;&#x5148;&#x6574;&#x4E2A;&#x4ECE;&#x8F93;&#x5165;&#x63A5;&#x53E3;&#x8BFB;&#x53D6;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x5728;&#x5C06;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x8F93;&#x9001;&#x5230;&#x8F93;&#x51FA;&#x63A5;&#x53E3;<br>&#x8FD9;&#x6837;&#x5BF9;&#x6BD4;&#x4E00;&#x770B;&#xFF0C;&#x6587;&#x4EF6;&#x8D8A;&#x5927;&#xFF0C;&#x6D41;&#x5F0F;&#x64CD;&#x4F5C;&#x7684;&#x4F18;&#x70B9;&#x5C31;&#x8D8A;&#x660E;&#x663E;</p>
+<p>&#x5757;&#x5F0F;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&apos;http&apos;</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&apos;fs&apos;</span>);</div><div class="line"><span class="keyword">var</span> a = <span class="string">&apos;timer1&apos;</span>;</div><div class="line"></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">resquest,response</span>)</span>{</div><div class="line">    <span class="built_in">console</span>.time(a);</div><div class="line">    fs.readFile(__dirname + <span class="string">&apos;/data.txt&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>{</div><div class="line">        response.end(data);</div><div class="line">    });</div><div class="line">    <span class="built_in">console</span>.timeEnd(a);   <span class="comment">//0.138ms</span></div><div class="line">}).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x4E0A;&#x9762;&#x521B;&#x5EFA;&#x7684;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;<br><img src="/2017/02/14/gulp&#x5DE5;&#x5177;&#x5B66;&#x4E60;1/2017-02-14/pic1.png" alt="image"></p>
+<p>&#x6D41;&#x5F0F;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&apos;http&apos;</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&apos;fs&apos;</span>);</div><div class="line"><span class="keyword">var</span> b = <span class="string">&apos;timer2&apos;</span>;</div><div class="line"></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>{</div><div class="line">    <span class="built_in">console</span>.time(b);</div><div class="line">    <span class="keyword">var</span> stream = fs.createReadStream(__dirname + <span class="string">&apos;/data.txt&apos;</span>);</div><div class="line">    stream.pipe(response);</div><div class="line">    <span class="built_in">console</span>.timeEnd(b);         <span class="comment">//0.705ms</span></div><div class="line">}).listen(<span class="number">4000</span>);</div></pre></td></tr></table></figure></p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;&#x4E0A;&#x9762;&#x521B;&#x5EFA;&#x7684;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;&#x4E3A;&#xFF1A;<br><img src="/2017/02/14/gulp&#x5DE5;&#x5177;&#x5B66;&#x4E60;1/2017-02-14/pic2.png" alt="image"></p>
+<p>&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#x6D41;&#x5F0F;&#x7684;&#x8BFB;&#x53D6;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#x3002;</p>
+<p>Stream&#x7684;&#x5206;&#x7C7B;&#xFF1A;<br>&#x2474; Readable Streams<br>&#x2475; Writable Streams<br>&#x2476; Transform Streams<br>&#x2477; Duplex Streams<br>&#x2478; Classic Streams</p>
+<blockquote>
+<p>&#x5176;&#x4E2D; Transform Streams &#x548C; Duplex Streams &#x90FD;&#x5C5E;&#x4E8E;&#x5373;&#x53EF;&#x8BFB;&#x53C8;&#x53EF;&#x5199;&#x7684;&#x6D41;&#xFF0C;&#x800C;&#x6700;&#x540E;&#x4E00;&#x4E2A; Classic Streams &#x662F;&#x5BF9; Node &#x53E4;&#x65E9;&#x7248;&#x672C;&#x4E0A;&#x7684; Stream &#x7684;&#x4E00;&#x4E2A;&#x7EDF;&#x79F0;</p>
+</blockquote>
+<h4 id="Readable-Streams-&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x901A;&#x8FC7;pipe&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;writable-transform&#x6216;&#x8005;duplex&#x6D41;"><a href="#Readable-Streams-&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x901A;&#x8FC7;pipe&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;writable-transform&#x6216;&#x8005;duplex&#x6D41;" class="headerlink" title="Readable Streams:&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x901A;&#x8FC7;pipe&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;writable,transform&#x6216;&#x8005;duplex&#x6D41;"></a>Readable Streams:&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x901A;&#x8FC7;pipe&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;writable,transform&#x6216;&#x8005;duplex&#x6D41;</h4><p><code>readableStream.pipe(dst)</code><br>&#x5E38;&#x89C1;&#x7684;<code>Readable Streams</code>&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;HTTP responses</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x4E0A;&#x7684;HTTP requests</li>
+<li>fs read streams(&#x4E0A;&#x9762;&#x6D41;&#x5F0F;&#x64CD;&#x4F5C;&#x7684;demo&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x8FD9;&#x4E2A;)</li>
+<li>zlib streams</li>
+<li>crypto streams</li>
+<li>TCP sockets</li>
+<li>&#x5B50;&#x8FDB;&#x7A0B;&#x7684;stdout&#x548C;stderr</li>
+<li>process.stdin<br><strong>&#x867D;&#x7136;Readable Streams&#x662F;&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x4F46;&#x5C06;&#x5176;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x6D88;&#x8017;&#x5BF9;&#x8C61;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x90FD;&#x662F;&#x53EF;&#x5199;&#x7684;</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> readAble = <span class="built_in">require</span>(<span class="string">&apos;stream&apos;</span>).Readable;</div><div class="line"><span class="keyword">var</span> rs = <span class="keyword">new</span> readAble;</div><div class="line"></div><div class="line">rs.push(<span class="string">&apos;aaa&apos;</span>);</div><div class="line">rs.push(<span class="string">&apos;bbb&apos;</span>);</div><div class="line">rs.push(<span class="string">&apos;ccc\n&apos;</span>);</div><div class="line">rs.push(<span class="literal">null</span>);   <span class="comment">//&#x7ED3;&#x675F;&#x53EF;&#x8BFB;&#x6D41;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x7684;\0</span></div><div class="line">rs.pipe(process.stdout);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5728;&#x6D88;&#x8017;&#x6570;&#x636E;&#x524D;&#xFF08;&#x5C31;&#x662F;&#x8FD9;&#x91CC;&#x7684;process.stdout&#xFF09;&#xFF0C;&#x6570;&#x636E;&#x4F1A;&#x4E00;&#x76F4;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x63A5;&#x53E3;_read()&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;,&#x5728;_read()&#x65B9;&#x6CD5;&#x5185;&#x8FDB;&#x884C;&#x6D41;&#x6570;&#x636E;&#x7684;push<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rs = <span class="built_in">require</span>(<span class="string">&apos;fs&apos;</span>).Readable();</div><div class="line">rs._read = <span class="function"><span class="params">()</span>=&gt;</span>{</div><div class="line">    rs.push(<span class="string">&apos;aaa&apos;</span>);</div><div class="line">}</div><div class="line">rs.pipe(process.stdout);</div></pre></td></tr></table></figure></p>
+<h4 id="writable-Streams"><a href="#writable-Streams" class="headerlink" title="writable Streams"></a>writable Streams</h4><p>&#x53EF;&#x5199;&#x6D41;&#x63A5;&#x53E3;&#x662F;&#x5BF9;&#x5199;&#x5165;&#x6570;&#x636E;&#x7684;&#x76EE;&#x6807;&#x7684;&#x62BD;&#x8C61;&#xFF1A;<br><code>src.pipe(writableStream)</code></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
